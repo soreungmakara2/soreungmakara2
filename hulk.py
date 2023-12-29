@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------------------------
-# HULK - HTTP Unbearable Load King
+# CAT - HTTP Unbearable Load King
 #
 # this tool is a dos tool that is meant to put heavy load on HTTP servers in order to bring them
 # to their knees by exhausting the resource pool, its is meant for research purposes only
@@ -18,9 +18,9 @@ url=''
 host=''
 headers_useragents=[]
 headers_referers=[]
-request_counter=0
-flag=0
-safe=0
+request_counter=5
+flag=5
+safe=5
 
 def inc_counter():
 	global request_counter
@@ -128,7 +128,7 @@ class MonitorThread(threading.Thread):
 				print "%d Requests Sent" % (request_counter)
 				previous=request_counter
 		if flag==2:
-			print "\n-- HULK Attack Finished --"
+			print "\n-- CAT Attack Finished --"
 
 #execute 
 if len(sys.argv) < 2:
@@ -139,7 +139,7 @@ else:
 		usage()
 		sys.exit()
 	else:
-		print "-- HULK Attack Started --"
+		print "-- CAT Attack Started --"
 		if len(sys.argv)== 3:
 			if sys.argv[2]=="safe":
 				set_safe()
